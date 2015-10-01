@@ -1,0 +1,29 @@
+#text {
+   width:500px;
+   height:100px;
+   border:1px solid #006600;
+   position:relative;
+   float:none;
+   background:#999900;
+   color:red;
+}
+.style{
+     color:black;
+     font-size:50;	
+	 vertical-align:top;
+ }
+ .style2{
+	 color:black;
+	 font-size:50;
+	 line-height:20px;
+ }
+ .form{
+	 width:300px;
+	 height:35px;
+	 float:right;
+	 
+ }
+ .style3{
+	color:black;
+     font-size:40; 
+ }
