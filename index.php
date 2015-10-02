@@ -43,9 +43,9 @@
                 <div class="style" align="center">Register: <br />
                     <form action ="register.php" method="POST">
                        <p class ="style2" align="left">You name : <input class="form" align="left" type="text" name="name"></p>
-                        <p class ="style2" align="left">Email adress: <input class ="form" type="text" name="email" size="50"></p>
-                        <p class ="style2" align="left">Password: <input class="form" type="password" name="pass" size="50"></p>
-                       <p><input type="submit" value="Register" style="width:90px"></p>
+                        <p class ="style2" align="left">Email adress: <input class ="form" type="text" name="email" ></p>
+                        <p class ="style2" align="left">Password: <input class="form" type="password" name="pass" ></p>
+                       <p><input class="button" type="submit" value="Register"></p>
                      </form>  
                 </div>
             </td>

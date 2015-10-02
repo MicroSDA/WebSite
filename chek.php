@@ -2,7 +2,7 @@
 // Скрипт проверки
 
 # Соединямся с БД
-$link=mysqli_connect("localhost", "banschey", "gettherefast0911", "tes_adr_com_ua");
+$link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
 
 
 
@@ -31,10 +31,9 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
 	}
     else
     {
-        print "Hi, ".$userdata['Name'];
-		
+		echo('<p class="style2" align="center">Hi, '.$userdata['Name'].' </p>');
 		echo('<form method="POST">
-        <input name="Exit" type="submit" value="Exit">
+        <input class="button" name="Exit" type="submit" value="Exit">
         </form>');
 		
 		

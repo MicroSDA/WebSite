@@ -14,7 +14,7 @@ function generateCode($length=6) {
 }
 
 # Соединямся с БД
-$link=mysqli_connect("localhost", "banschey", "gettherefast0911", "tes_adr_com_ua");
+$link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
 
 if(isset($_POST['submit']))
 {
@@ -44,7 +44,7 @@ if(isset($_POST['submit']))
 }
 ?>
 <form method="POST">
-Username <input name="name" type="text"><br>
-Password <input name="pass" type="password"><br>
-<input name="submit" type="submit" value="Login">
+<p class="style"> Username: <input class="form" name="name" type="text"></p>
+<p class="style"> Password: <input class="form" name="pass" type="password"></p>
+<input class="button" name="submit" type="submit" value="Login">
 </form>
