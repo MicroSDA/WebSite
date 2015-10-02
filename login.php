@@ -14,7 +14,7 @@ function generateCode($length=6) {
 }
 
 # Соединямся с БД
-$link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
+$link=mysqli_connect("localhost", "banschey", "gettherefast0911", "tes_adr_com_ua");
 
 if(isset($_POST['submit']))
 {
@@ -31,8 +31,8 @@ if(isset($_POST['submit']))
         # Записываем в БД новый хеш авторизации и IP
         mysqli_query($link, "UPDATE Users SET hash='".$hash."'WHERE id='".$data['id']."'");
         # Ставим куки
-        setcookie("id", $data['id'], time()+60*60*24*30);
-        setcookie("hash", $hash, time()+60*60*24*30);
+        setcookie("id", $data['id'], time()+3600);
+        setcookie("hash", $hash, time()+3600);
 
         # Переадресовываем браузер на страницу проверки нашего скрипта
         header("Location: index.php"); exit();

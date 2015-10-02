@@ -2,7 +2,7 @@
 // Скрипт проверки
 
 # Соединямся с БД
-$link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
+$link=mysqli_connect("localhost", "banschey", "gettherefast0911", "tes_adr_com_ua");
 
 
 
@@ -13,14 +13,21 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
 
     if($userdata['hash'] != $_COOKIE['hash'])
     {     
-        setcookie("hash","", time() - 3600*24*30*12, "/");
-        print $_COOKIE['hash'];	
+        session_start();
+	    unset($_SESSION['id']);
+	    setcookie("hash","");
+	    setcookie("id","");
+	    header('location:index.php');
     }
 	
 	if($userdata['id'] != $_COOKIE['id'])
 	{
-		setcookie("id","", time() - 3600*24*30*12, "/");
-		print "Id !=";
+		session_start();
+	    unset($_SESSION['id']);
+	    setcookie("hash","");
+	    setcookie("id","");
+	    header('location:index.php');
+		
 	}
     else
     {
