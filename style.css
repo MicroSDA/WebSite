@@ -1,35 +1,91 @@
-#text {
-   width:300px;
-   height:80px;
-   border:1px solid #006600;
-   position:relative;
-   float:none;
-   background:#999900;
-   color:red;
+body {
+ background: #f3f2f3;
+ color: #000000;
+ font-family: Trebuchet MS, Arial, Times New Roman;
+ font-size: 20px;
+ background-image: url(Fon.png);
+ width:auto;
+ height:auto;
+ position:static;
+ background-size:100%;/* Размер на весь экран*/
+ background-attachment: fixed;/*Фиксированный фон*/
 }
-.style{
-     color:black;
-     font-size:35;	
-	 vertical-align:top;
- }
- .style2{
-	 color:black;
-	 font-size:35;
-	 line-height:20px;
- }
- .form{
-	 width:200px;
-	 height:28px;
-	 float:right;
-	 
- }
- .style3{
-	color:black;
-     font-size:35; 
- }
- .button{
-	 text-align: center;
-	 width:200px;
-	 height:28px;
 
- }
+#container {
+ background: #FFFFFF;
+ width: 902px;
+ height: auto;
+ margin-top:30px;
+ text-indent:5px;/*Оступ горизонтально*/
+ line-height:1.5;/*Интервал между строк*/
+ margin-left:auto;
+ margin-right:auto;
+ border-style:solid;
+ border-collapse:-1px;
+ border-width:1px;
+}
+
+#header {
+ background: #838283;
+ height: 150px;
+ width: 900px;
+ border-style:solid;
+ border-width:1px;
+}
+
+#navigation {
+ background: #a2a2a2;
+ width: 900px;
+ height: 80px;
+ border-style:solid;
+ border-collapse:1px;
+ border-width:1px;
+}
+
+#menu {
+ background: #666667;
+ border-style:solid;
+ border-width:1px;
+ float: left;
+ width: 210px;
+ height:100%;
+}
+
+#content {
+ background: #d2d0d2;
+ float: right;
+ width: 700px;
+}
+
+#footer {
+ background: #838283;
+ height: 60px;
+ width: 900px;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:0px;
+ border-style:solid;
+ border-collapse:-1px;
+ border-width:2px;
+}
+#form{
+height: 150px;
+width: 260px;
+border-style:solid;
+border-collapse:-1px;
+border-width:2px;
+margin-top:-2px;
+margin-right:-2px;
+}
+#register
+{
+ background: #666667;
+ width: 200px;
+ height:270px;
+ border-width: 2px; /*Размер бордера*/
+ border-color:black;
+ border-style:solid;	
+}
+#clear {
+clear:both;
+}

@@ -1,8 +1,4 @@
-
-<?
-// —Ú‡ÌËˆ‡ ‡‚ÚÓËÁ‡ˆËË
-
-# ‘ÛÌÍˆËˇ ‰Îˇ „ÂÌÂ‡ˆËË ÒÎÛ˜‡ÈÌÓÈ ÒÚÓÍË
+Ôªø<?
 function generateCode($length=6) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789";
     $code = "";
@@ -13,28 +9,28 @@ function generateCode($length=6) {
     return $code;
 }
 
-# —ÓÂ‰ËÌˇÏÒˇ Ò ¡ƒ
+# –°–æ–µ–¥–∏–Ω—è–º—Å—è —Å –ë–î
 $link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
 
 if(isset($_POST['submit']))
 {
-    # ¬˚Ú‡ÒÍË‚‡ÂÏ ËÁ ¡ƒ Á‡ÔËÒ¸, Û ÍÓÚÓÓÈ ÎÓ„ËÌ ‡‚ÌˇÂÚ¸Òˇ ‚‚Â‰ÂÌÌÓÏÛ
+    # –í—ã—Ç–∞—Å–∫–∏–≤–∞–µ–º –∏–∑ –ë–î –∑–∞–ø–∏—Å—å, —É –∫–æ—Ç–æ—Ä–æ–π –ª–æ–≥–∏–Ω —Ä–∞–≤–Ω—è–µ—Ç—å—Å—è –≤–≤–µ–¥–µ–Ω–Ω–æ–º—É
     $query = mysqli_query($link,"SELECT id, Password FROM Users WHERE Name='".mysqli_real_escape_string($link,$_POST['name'])."' LIMIT 1");
     $data = mysqli_fetch_assoc($query);
 
-    # —‡‚ÌË‚‡ÂÏ Ô‡ÓÎË
+    # –°—Ä–∞–≤–Ω–∏–≤–∞–µ–º –ø–∞—Ä–æ–ª–∏
     if($data['Password']==($_POST['pass']))
     {
-        # √ÂÌÂËÛÂÏ ÒÎÛ˜‡ÈÌÓÂ ˜ËÒÎÓ Ë ¯ËÙÛÂÏ Â„Ó
+        # –ì–µ–Ω–µ—Ä–∏—Ä—É–µ–º —Å–ª—É—á–∞–π–Ω–æ–µ —á–∏—Å–ª–æ –∏ —à–∏—Ñ—Ä—É–µ–º –µ–≥–æ
         $hash = md5(generateCode(10));
 
-        # «‡ÔËÒ˚‚‡ÂÏ ‚ ¡ƒ ÌÓ‚˚È ıÂ¯ ‡‚ÚÓËÁ‡ˆËË Ë IP
+        # –ó–∞–ø–∏—Å—ã–≤–∞–µ–º –≤ –ë–î –Ω–æ–≤—ã–π —Ö–µ—à –∞–≤—Ç–æ—Ä–∏–∑–∞—Ü–∏–∏ –∏ IP
         mysqli_query($link, "UPDATE Users SET hash='".$hash."'WHERE id='".$data['id']."'");
-        # —Ú‡‚ËÏ ÍÛÍË
+        # –°—Ç–∞–≤–∏–º –∫—É–∫–∏
         setcookie("id", $data['id'], time()+3600);
         setcookie("hash", $hash, time()+3600);
 
-        # œÂÂ‡‰ÂÒÓ‚˚‚‡ÂÏ ·‡ÛÁÂ Ì‡ ÒÚ‡ÌËˆÛ ÔÓ‚ÂÍË Ì‡¯Â„Ó ÒÍËÔÚ‡
+        # –ü–µ—Ä–µ–∞–¥—Ä–µ—Å–æ–≤—ã–≤–∞–µ–º –±—Ä–∞—É–∑–µ—Ä –Ω–∞ —Å—Ç—Ä–∞–Ω–∏—Ü—É –ø—Ä–æ–≤–µ—Ä–∫–∏ –Ω–∞—à–µ–≥–æ —Å–∫—Ä–∏–ø—Ç–∞
         header("Location: index.php"); exit();
     }
     else
@@ -42,9 +38,11 @@ if(isset($_POST['submit']))
         print "Incorect login or password";
     }
 }
+
 ?>
+–í—Ö–æ–¥
 <form method="POST">
-<p class="style"> Username: <input class="form" name="name" type="text"></p>
-<p class="style"> Password: <input class="form" name="pass" type="password"></p>
-<input class="button" name="submit" type="submit" value="Login">
+<p style="line-height:0.2;text-align:left">–ò–º—è:<input style="float:right; margin-top:-0.6em;" type="text" name="name" /></p>
+<p style="line-height:0.2;text-align:left">–ü–∞—Ä–æ–ª—å:<input style="float:right;margin-top:-0.6em;" type="password" name="pass" /></p>
+<input style="margin-left:auto" name="submit" type="submit" value="–í–æ–π—Ç–∏" /> &nbsp;&nbsp;  <a style="font-size:15px;" href="register_page.php">–ó–∞—Ä–µ–≥–∏—Å—Ç—Ä–∏—Ä–æ–≤–∞—Ç—å—Å—è ?</a>
 </form>

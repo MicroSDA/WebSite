@@ -1,16 +1,11 @@
+
 <?
-// Ñêðèïò ïðîâåðêè
 
-# Ñîåäèíÿìñÿ ñ ÁÄ
 $link=mysqli_connect("localhost", "", "", "tes_adr_com_ua");
-
-
-
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
 {
-    $query = mysqli_query($link, "SELECT * FROM Users WHERE id = '".intval($_COOKIE['id'])."' LIMIT 1");
+    $query = mysqli_query($link, "SELECT * FROM Users WHERE id = '".intval($_COOKIE['id'])."'");
     $userdata = mysqli_fetch_assoc($query);
-
     if($userdata['hash'] != $_COOKIE['hash'])
     {     
         session_start();
@@ -31,10 +26,12 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
 	}
     else
     {
-		echo('<p class="style2" align="center">Hi, '.$userdata['Name'].' </p>');
-		echo('<form method="POST">
-        <input class="button" name="Exit" type="submit" value="Exit">
-        </form>');
+		     
+			echo('<p class="style2" align="center">ÐŸÑ€Ð¸Ð²ÐµÑ‚, '.$userdata['Name'].' </p>');
+			echo('<form method="POST">
+			<input class="button" name="Exit" type="submit" value="Ð’Ñ‹Ñ…Ð¾Ð´">
+			</form>');
+			 
 		
 		
     }
@@ -45,7 +42,6 @@ else
 	
 }
 ?>
-
 <?
 if(isset($_POST['Exit']))
 {

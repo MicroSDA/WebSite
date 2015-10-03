@@ -9,9 +9,9 @@ if($name==NULL||$email==NUll||$pass==NULL)
 	die();  
 }
 
-$link=mysql_connect("localhost", "", ""); 
+$link=mysql_connect("localhost", "", "", ""); 
   mysql_select_db('tes_adr_com_ua', $link);
-$s="INSERT INTO Users (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"; 
+  $s="INSERT INTO Users (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"; 
   mysql_query($s); 
   mysql_close($link);
   header ('Location: index.php');
