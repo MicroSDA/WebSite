@@ -35,7 +35,7 @@ if(isset($_POST['submit']))
     }
     else
     {
-        print "Incorect login or password";
+        print "Ну ты инвалид !";
     }
 }
 

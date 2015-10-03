@@ -15,7 +15,7 @@
              </div> 
          </div>
 
-         <div id="navigation">Блок навигации</div>
+         <div id="navigation"><a href="https://github.com/MicroSDA/"><img src="git_link.PNG" style="width:74px;hight:80px"></a></div>
 
          <div id="menu" >Зарегистрированные:<br>
 		 <hr style="border-style:solid;border-width:1px;">
