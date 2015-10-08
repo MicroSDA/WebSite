@@ -9,7 +9,7 @@ if($name==NULL||$email==NUll||$pass==NULL)
 	die();  
 }
 
-$link=mysql_connect("localhost", "", "", ""); 
+  $link=mysql_connect("localhost", "", "", "tes_adr_com_ua"); 
   mysql_select_db('tes_adr_com_ua', $link);
   $s="INSERT INTO Users (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"; 
   mysql_query($s); 
