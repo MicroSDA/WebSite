@@ -55,6 +55,9 @@ body {
  background: #d2d0d2;
  float: right;
  width: 700px;
+ line-height:1.5;
+ text-indent:5px;
+ word-wrap:break-word;
 }
 
 #footer {
