@@ -8,8 +8,17 @@ echo('<form method="POST" action="Login.php">
 </form>');
 }
 else{
+    if($_COOKIE['color']==NULL)
+    {
+        $color='#000000';
+    }else{$color = $_COOKIE['color'];}
+    
+    echo('<form action="Set_color.php" method="POST">
+          <input type="color" value="'.$color.'" name="color">
+          <input type="submit" value="Выбрать">
+          </form>');
     echo('<p class="style2" align="center">Привет, '.$_COOKIE['name'].' </p>');
     echo('<form method="POST" action="Exit.php">
-         <input class="button" name="Exit" type="submit" value="Выход">
-	 </form>');
+          <input class="button" name="Exit" type="submit" value="Выход">
+	  </form>');
 }

@@ -27,7 +27,7 @@ body {
 
 #header {
  background: #838283;
- height: 150px;
+ height: 160px;
  width: 900px;
  border-style:solid;
  border-width:1px;
@@ -72,8 +72,8 @@ body {
  border-width:2px;
 }
 #form{
-height: 150px;
-width: 260px;
+height: 160px;
+width: 270px;
 border-style:solid;
 border-collapse:-1px;
 border-width:2px;

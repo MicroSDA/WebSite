@@ -25,7 +25,8 @@ if(isset($_POST['sumbit'])){
        $userdata = mysqli_fetch_assoc($query);
        setcookie('id',$userdata['id'],time()+3600,"/");
        setcookie('name',$userdata['Name'],time()+3600,"/");
-       setcookie('hash',$userdata['hash'],time()+3600,"/");   
+       setcookie('hash',$userdata['hash'],time()+3600,"/");  
+       setcookie('color',$userdata['color'],  time()+3600,"/");
        header('Location:index.php');
     }  
 }

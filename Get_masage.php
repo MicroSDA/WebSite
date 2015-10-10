@@ -5,5 +5,8 @@ $s="SELECT * FROM masage;";
 $r=mysql_query($s); 
 mysql_close($link); 
 while ($q=mysql_fetch_row($r))
-{ echo $q[1].'<hr style="margin-bottom:auto;">';}
- ?>
+{echo('<font style="color:black">'.$q[1].'</font>
+       <font style="color:'.$q[2].'">'.$q[3].'-:</font>
+       <font style="color:black">'.$q[4].'</font>
+       <hr style="margin-bottom:auto;">');}
+?>
