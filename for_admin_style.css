@@ -1,0 +1,45 @@
+body {
+ background: #838283;
+ color: #000000;
+ font-family: Trebuchet MS, Arial, Times New Roman;
+ font-size: 20px;
+ background-image: url(Fon.png);
+ width:auto;
+ height:auto;
+ position:static;
+ background-size:100%;/* ?????? ?? ???? ?????*/
+ background-attachment: fixed;/*????????????? ???*/
+}
+#panel{
+	width:900px;
+	height:600px;
+	border-style:solid;
+    border-collapse:1px;
+    border-width:1px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:100;
+	margin-bottom:auto;
+	text-align:center;
+	background: #838283;
+}
+#users{
+	width:200px;
+	height:auto;
+	border-style:solid;
+    border-collapse:1px;
+    border-width:1px;
+	text-align:center;
+	background: #f3f2f3;
+	float:left;
+}
+#chat{
+	width:200px;
+	height:50px;
+	border-style:solid;
+    border-collapse:1px;
+    border-width:1px;
+	text-align:center;
+	background: #f3f2f3;
+	float:right;
+}

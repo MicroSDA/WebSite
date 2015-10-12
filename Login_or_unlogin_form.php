@@ -15,10 +15,14 @@ else{
     
     echo('<form action="Set_color.php" method="POST">
           <input type="color" value="'.$color.'" name="color">
-          <input type="submit" value="Выбрать">
+          <input type="submit" value="Сохранить">
           </form>');
     echo('<p class="style2" align="center">Привет, '.$_COOKIE['name'].' </p>');
     echo('<form method="POST" action="Exit.php">
           <input class="button" name="Exit" type="submit" value="Выход">
 	  </form>');
+    if(intval($_COOKIE['uid'])==1)
+    {
+       echo('<a href="Admin_page.php">Админ панель');
+    }
 }
