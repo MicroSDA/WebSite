@@ -2,4 +2,8 @@
 if(isset($_POST['Exit']))
  {
  include('./Delete_cookie.php');
- }  
+ }
+ if(isset($_POST['personal_area']))
+ {
+     header('Location:Personal_Area_page.php');
+ }

@@ -12,12 +12,11 @@ include('./chek_coockie.php')
     <link rel="icon" href="img/favicon.png">
 
     <title>MicroSDA Blog</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/jquery.fileupload.css">
 	<link rel="stylesheet" href="css/jquery.fileupload.css">
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    </head>
+  </head>
 
   <body style="background-image: url(img/brown.png);">
     <div class="container">
@@ -37,7 +36,7 @@ include('./chek_coockie.php')
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-            <li><a href="index.php" style="color:#e6e6e6;margin-top: 7%">MicroSDA Project</a></li>
+            <li><a href="index.php" style="color:#e6e6e6;margin-top: 7%">На главную</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color:#e6e6e6;margin-top: 8%" >Контакты<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -58,12 +57,25 @@ include('./chek_coockie.php')
       </nav>
        <script src="js/jquery-1.11.2.js"></script>
        <script src="js/bootstrap.min.js"></script>
+	   
       <div class="jumbotron">
-        <h1>Тут пока что, нет не чего :(</h1>
-        <p> Но возможно вскоре что то будет. <img src="img/favicon_in_seea.png" title="В процессе !" ></p>
-      </div>
+        <h1>Опишите что вас бекспокоит:</h1>
+        <div class="alert alert-warning" role="alert">Все поля обязательны для заполнений</div>
+        <form role="form" method="POST" action="send_admin_masage.php"> 
+        <div class="form-group">
+           <?php
+           if(!isset($_COOKIE['name']))
+           {
+               echo('<h2><input class="form-control" style="width: 200px" type="text" name="name" value="Ваше имя"></h2>');
+           }else{echo('<h2><input class="form-control" style="width: 200px" type="hidden" name="name" value="'.$_COOKIE['name'].'"></h2>');}
+           ?>     
+            <textarea class="form-control" style="max-width: 1020px;" name="masage" ></textarea><br>
+            <button type="submit" name="sumbit" class="btn btn-success" >Отправить</button>
+        </div>
+        </form>
+        </div>
 
-     <footer > <!--Футер-->
+      <footer > <!--Футер-->
        <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -81,7 +93,9 @@ include('./chek_coockie.php')
         </div><!--/.container-fluid -->
       </nav>
      </footer>
-    <script>
+
+    </div><!-- .content -->
+	<script>
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -89,8 +103,8 @@ include('./chek_coockie.php')
 
    ga('create', 'UA-69005394-1', 'auto');
    ga('send', 'pageview');
-   </script>
-    </div><!-- .content -->
+
+</script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

@@ -1,28 +1,31 @@
 <?php
 if(!isset($_COOKIE['name']))
 {   
-echo('<form method="POST" action="Login.php">
-<p style="line-height:0.2;text-align:left">Имя:<input style="float:right; margin-top:-0.6em;" type="text" name="name" /></p>
-<p style="line-height:0.2;text-align:left">Пароль:<input style="float:right;margin-top:-0.6em;" type="password" name="pass" /></p>
-<input style="margin-left:auto" name="sumbit" type="submit" value="Войти" /> &nbsp;&nbsp;  <a style="font-size:15px;" href="register_page.php">Зарегистрироваться ?</a>
-</form>');
+ echo(' <form method="POST" action="Login.php" class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+        <input type="text" placeholder="Login" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+        <input type="password" placeholder="Password" name="pass" class="form-control">
+        </div>
+        <button type="submit" name="sumbit" class="btn btn-success">Войти</button>
+        <button type="submit" name="register" class="btn btn-success">Зарегистрироваться</button>
+        </form>');
 }
 else{
     if($_COOKIE['color']==NULL)
     {
         $color='#000000';
     }else{$color = $_COOKIE['color'];}
-    
-    echo('<form action="Set_color.php" method="POST">
-          <input type="color" value="'.$color.'" name="color">
-          <input type="submit" value="Сохранить">
+    echo('<form  class="navbar-form navbar-right" role="form" method="POST" action="Exit.php">
+          <div class="form-group">
+          <p class="navbar-text" style="color:#e6e6e6">Привет, '.$_COOKIE['name'].' </p>
+          </div>
+          <button type="submit" name="Exit" class="btn btn-success">Выход</button>
+          <button type="submit" name="personal_area" class="btn btn-success">Личный кабинет</button>
           </form>');
-    echo('<p class="style2" align="center">Привет, '.$_COOKIE['name'].' </p>');
-    echo('<form method="POST" action="Exit.php">
-          <input class="button" name="Exit" type="submit" value="Выход">
-	  </form>');
     if(intval($_COOKIE['uid'])==1)
     {
-       echo('<a href="Admin_page.php">Админ панель');
+    
     }
 }

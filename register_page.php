@@ -1,21 +1,28 @@
 ﻿<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Что-то не понятное</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Регистранция</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 </head>
-<body>
-    <div style="top:50%;left: 50%; position:absolute;margin: -150px 0 0 -100px;line-height:1.5">
-         <div id="register" align="center">Регистрация 
-            <form action ="register.php" method="POST">
-            <p style="line-height:0.1" >Имя:</p>
-            <p><input type="text" name="name" /></p>
-            <p style="line-height:0.1" >Пароль:</p>
-            <p><input style="" type="password" name="pass" /></p>
-			<p style="line-height:0.1" >Почта:</p>
-			<p><input style="" type="text" name="email" /></p>
-            <p><input type="submit" value="Поехали" /></p>
-        </form>
-        </div>
+<body style="background-image: url(img/brown.png);">
+     <div class="container">
+              <div class="jumbotron" style="top:50%;left: 50%; position:absolute;margin: -190px 0 0 -155px;">
+                  <h2 style="text-align: center">Регистрация:</h2>
+                     <form action ="register.php" method="POST" class="navbar-form navbar-right" role="form">
+                         <div class="form-group" style="text-align:center">
+                          <input type="text" placeholder="Login" name="name" class="form-control"><br><br>
+                          <input type="password" placeholder="Password" name="pass" class="form-control"><br><br>
+                          <input type="text" placeholder="Email" name="email" class="form-control"><br><br>
+                          <button type="submit" name="register" class="btn btn-success">Зарегистрироваться</button>
+                          </div>
+                     </form>
+             </div>
+     </div>
 </body>
 </html>
