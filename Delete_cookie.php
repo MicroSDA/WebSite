@@ -5,4 +5,6 @@
  setcookie('color','',time()-3600,"/");
  setcookie('uid','',time()-3600,"/");
  setcookie('img','',time()-3600,"/");
+ setcookie('img_min','',time()-3600,"/");
+ setcookie('email','',time()-3600,"/");
  header('Location:index.php');

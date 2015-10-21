@@ -18,7 +18,7 @@ include('./chek_coockie.php')
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
-  <body style="background-image: url(img/brown.png);">
+  <body style="background-image: url(img/background/brown.png);background-attachment: fixed;">
     <div class="container">
       <br>
       <br>
@@ -40,9 +40,10 @@ include('./chek_coockie.php')
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color:#e6e6e6;margin-top: 8%" >Контакты<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                   <li><a href="https://vk.com/id40372407">Vk</a></li>
-                  <li><a href="https://github.com/MicroSDA/">GitHub</a></li>
-                  <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
+                  <li><a href="https://vk.com/id40372407">Vk</a></li>
+                  <li><a href="https://github.com/MicroSDA/">GitHub</a></li>              
+				  <li><a href="http://habrahabr.ru/users/microsda/">Habrahabr</a></li>
+				  <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
                   <li class="divider"></li>
                   <li class="dropdown-header">Дополнительно</li>
                   <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
@@ -79,21 +80,10 @@ include('./chek_coockie.php')
         </div>
 
       <footer > <!--Футер-->
-       <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" ></a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
+      <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
+       
             <p  style="text-align:center;margin-top:1%;color:#e6e6e6;"><span class="glyphicon glyphicon-fire"></span> Create by Ro(MicroSDA) <span class="glyphicon glyphicon-fire"></span></p>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+       
       </nav>
      </footer>
 

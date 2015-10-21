@@ -23,6 +23,7 @@ if(isset($_POST['sumbit'])){
        setcookie('color',$userdata['color'],  time()+3600,"/");
        setcookie('uid',$userdata['uid'],  time()+3600,"/");
        setcookie('img',$userdata['img'],  time()+3600,"/");
+	   setcookie('img_min',$userdata['img'],  time()+3600,"/");
        setcookie('email',$userdata['Email'],  time()+3600,"/");
        header('Location:index.php');
     }else{ header('Location:index.php');} 

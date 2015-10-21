@@ -19,7 +19,7 @@ include('./chek_coockie.php')
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     </head>
 
-  <body style="background-image: url(img/brown.png);">
+  <body style="background-image: url(img/background/brown.png);background-attachment: fixed;">
     <div class="container">
       <br>
       <br>
@@ -41,9 +41,10 @@ include('./chek_coockie.php')
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color:#e6e6e6;margin-top: 8%" >Контакты<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="https://vk.com/id40372407">Vk</a></li>
-                  <li><a href="https://github.com/MicroSDA/">GitHub</a></li>
-                  <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
+                 <li><a href="https://vk.com/id40372407">Vk</a></li>
+                  <li><a href="https://github.com/MicroSDA/">GitHub</a></li>              
+				  <li><a href="http://habrahabr.ru/users/microsda/">Habrahabr</a></li>
+				  <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
                   <li class="divider"></li>
                   <li class="dropdown-header">Дополнительно</li>
                   <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
