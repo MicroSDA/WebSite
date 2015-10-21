@@ -1,12 +1,10 @@
 <?php
-$link=mysql_connect("localhost", "root", "");
-mysql_select_db('tes_adr_com_ua', $link); 
-$s="SELECT * FROM masage;"; 
-$r=mysql_query($s); 
+include('./connect_db.php');//Конект к бд
+$masage_aryy=mysqli_query($link,"SELECT * FROM ".$masage_table.";"); 
 mysql_close($link); 
-while ($q=mysql_fetch_row($r))
-{echo('<font style="color:black">'.$q[1].'</font>
-       <font style="color:'.$q[2].'">'.$q[3].'-:</font>
-       <font style="color:black">'.$q[4].'</font>
+while ($masage=mysql_fetch_row($masage_aryy))
+{echo('<font style="color:black">'.$masage[1].'</font>
+       <font style="color:'.$masage[2].'">'.$q[3].'-:</font>
+       <font style="color:black">'.$masage[4].'</font>
        <hr style="margin-bottom:auto;">');}
 ?>

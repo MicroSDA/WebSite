@@ -9,10 +9,8 @@ if($name==NULL||$email==NUll||$pass==NULL)
 	die();  
 }
 
-  $link=mysql_connect("localhost", "", "", "tes_adr_com_ua"); 
-  mysql_select_db('tes_adr_com_ua', $link);
-  $s="INSERT INTO Users (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"; 
-  mysql_query($s); 
+  include('./connect_db.php');//Конект к бд
+  mysql_query($link,"INSERT INTO ".$users_table." (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"); 
   mysql_close($link);
   header ('Location: index.php');
 ?>

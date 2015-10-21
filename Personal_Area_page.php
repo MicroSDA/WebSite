@@ -28,7 +28,7 @@ if(!isset($_COOKIE['id']))
       <br>
       <br>
       <br>
-      <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
+      <nav class="navbar navbar-inverse" role="navigation" style="font-size:15px;">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
@@ -53,6 +53,9 @@ if(!isset($_COOKIE['id']))
                   <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
                 </ul>
               </li>
+              <?php
+                include('./Get_online.php');
+                ?>
             </ul>
             <?php
             include('./Login_or_unlogin_form.php');
@@ -80,7 +83,7 @@ if(!isset($_COOKIE['id']))
                
                 <input class="btn btn-success fileinput-button" name="userfile" type="file" style="min-width:25px;max-width:150px;margin-left:auto;margin-right:auto"/>
 				<br>
-                <input class="btn btn-success fileinput-button" type="submit" value="Загрузить" />
+                <button class="btn btn-success fileinput-button" type="submit" value="Загрузить"><i class="glyphicon glyphicon-upload"></i> Загрузить</button>
                 </form>
                 <br>
                 <br>
@@ -116,7 +119,7 @@ if(!isset($_COOKIE['id']))
             <a class="navbar-brand" ></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <p  style="text-align:center;margin-top:1%;color:#e6e6e6;">Create by Ro(MicroSDA)</p>
+            <p  style="text-align:center;margin-top:1%;color:#e6e6e6;"><span class="glyphicon glyphicon-fire"></span> Create by Ro(MicroSDA) <span class="glyphicon glyphicon-fire"></span></p>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>

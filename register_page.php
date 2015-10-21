@@ -14,7 +14,7 @@
      <div class="container">
               <div class="jumbotron" style="max-width:300px;margin-left:auto;margin-right:auto;margin-top:20%;min-height:375px">
                   <h2 style="text-align: center">Регистрация:</h2>
-				      <form action ="register.php" method="POST" class="navbar-form navbar-right" role="form">
+		      <form action ="./php_script/register.php" method="POST" class="navbar-form navbar-right" role="form">
                          <div class="form-group" style="text-align:center">
                           <input type="text" placeholder="Login" name="name" class="form-control"><br><br>
                           <input type="password" placeholder="Password" name="pass" class="form-control"><br><br>

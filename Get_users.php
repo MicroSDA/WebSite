@@ -1,11 +1,9 @@
 <?php 
-    $link=mysql_connect("localhost", "root", "");
-     mysql_select_db('tes_adr_com_ua', $link); 
-     $s="SELECT * FROM users;"; 
-     $r=mysql_query($s); 
-     mysql_close($link); 
-     while ($q=mysql_fetch_row($r))
-	 { echo '<div class="style3">' .$q[1].'<br> </div>';
-					
-     }
+ include('./connect_db.php');//Конект к бд
+ $users_aryy=mysql_query($link,"SELECT * FROM ".$users_table.";"); 
+ mysql_close($link); 
+ while ($users=mysql_fetch_row($users_aryy))
+       { 
+	echo '<div class="style3">' .$q[1].'<br> </div>';				
+       }
  ?>

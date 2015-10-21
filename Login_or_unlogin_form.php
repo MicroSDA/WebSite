@@ -2,14 +2,14 @@
 if(!isset($_COOKIE['name']))
 {   
  echo(' <form method="POST" action="Login.php" class="navbar-form navbar-right" role="form">
-        <div class="form-group">
+        <div class="form-group" style="margin-top: 1%">
         <input type="text" placeholder="Login" name="name" class="form-control">
         </div>
-        <div class="form-group">
-        <input type="password" placeholder="Password" name="pass" class="form-control">
+        <div class="form-group" style="margin-top: 1%">
+        <input type="password" placeholder="Password" name="pass" class="form-control" >
         </div>
-        <button type="submit" name="sumbit" class="btn btn-success">Войти</button>
-        <button type="submit" name="register" class="btn btn-success">Зарегистрироваться</button>
+        <button type="submit" name="sumbit" class="btn btn-success" style="margin-top: 1%">Войти</button>
+        <button type="submit" name="register" class="btn btn-success" style="margin-top: 1%">Зарегистрироваться</button>
         </form>');
 }
 else{

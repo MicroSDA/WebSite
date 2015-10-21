@@ -23,7 +23,7 @@ include('./chek_coockie.php')
       <br>
       <br>
       <br>
-      <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
+      <nav class="navbar navbar-inverse" role="navigation" style="font-size:15px;">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
@@ -47,6 +47,9 @@ include('./chek_coockie.php')
                   <li class="dropdown-header">Дополнительно</li>
                   <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
                 </ul>
+                <?php
+                include('./Get_online.php');
+                ?>
               </li>
             </ul>
             <?php
@@ -60,7 +63,7 @@ include('./chek_coockie.php')
 	   
       <div class="jumbotron">
         <h1>Опишите что вас бекспокоит:</h1>
-        <div class="alert alert-warning" role="alert">Все поля обязательны для заполнений</div>
+        <div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-alert" ></span>&nbsp &nbsp Все поля обязательны для заполнений</div>
         <form role="form" method="POST" action="send_admin_masage.php"> 
         <div class="form-group">
            <?php
@@ -88,7 +91,7 @@ include('./chek_coockie.php')
             <a class="navbar-brand" ></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <p  style="text-align:center;margin-top:1%;color:#e6e6e6;">Create by Ro(MicroSDA)</p>
+            <p  style="text-align:center;margin-top:1%;color:#e6e6e6;"><span class="glyphicon glyphicon-fire"></span> Create by Ro(MicroSDA) <span class="glyphicon glyphicon-fire"></span></p>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
