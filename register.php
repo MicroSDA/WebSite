@@ -10,7 +10,16 @@ if($name==NULL||$email==NUll||$pass==NULL)
 }
 
   include('./connect_db.php');//Конект к бд
-  mysql_query($link,"INSERT INTO ".$users_table." (Name,Password,Email) VALUES('".$name."','".$pass."','".$email."');"); 
-  mysql_close($link);
+  $uid=0;
+  mysqli_query($link,"INSERT INTO ".$users_table." (Name,Password,Email,uid) VALUES('".$name."','".$pass."','".$email."','".$uid."');");
+  mysqli_query($link,"CREATE TABLE mail_".$name."( ".
+       "id INT NOT NULL AUTO_INCREMENT,".
+       "Data TEXT NULL COLLATE utf8_unicode_ci,".
+       "Color TEXT NULL COLLATE utf8_unicode_ci,".
+       "Name TEXT NULL COLLATE utf8_unicode_ci,".
+       "Masage TEXT NULL COLLATE utf8_unicode_ci,".
+       "img TEXT NULL COLLATE utf8_unicode_ci,".
+       "PRIMARY KEY (id));");
+  mysqli_close($link);
   header ('Location: index.php');
 ?>

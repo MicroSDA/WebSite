@@ -1,5 +1,9 @@
 <?php
-include('./chek_coockie.php')
+include('./chek_coockie.php');
+if(!isset($_COOKIE['id']))
+ {
+    header("Location:index.php");
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +15,13 @@ include('./chek_coockie.php')
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.png">
 
-    <title>MicroSDA Blog</title>
+    <title>Чат</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/jquery.fileupload.css">
-	<link rel="stylesheet" href="css/jquery.fileupload.css">
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
+    <script type="text/javascript" src="js/load_chat.js"></script> 
+    <script src="js/jquery-1.11.2.js"></script>
     </head>
 
   <body style="background-image: url(img/background/brown.png);background-attachment: fixed;">
@@ -24,7 +29,7 @@ include('./chek_coockie.php')
       <br>
       <br>
       <br>
-       <nav role="navigation" class="navbar navbar-inverse">
+      <nav role="navigation" class="navbar navbar-inverse">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -35,7 +40,7 @@ include('./chek_coockie.php')
             </button>
             <a href="./index.php" class="navbar-brand" style="font-size:15px;color:#e6e6e6">MicroSDA Blog</a>
         </div>
-        <!-- Collection of nav links, forms, and other content for toggling -->
+
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
        
@@ -64,7 +69,7 @@ include('./chek_coockie.php')
                     </ul>  
                     <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#e6e6e6">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#e6e6e6" >
                         <b>
                         <?php
                      if(!isset($_COOKIE['name']))
@@ -90,59 +95,54 @@ include('./chek_coockie.php')
             
         </div>
     </nav>
-       <script src="js/jquery-1.11.2.js"></script>
-       <script src="js/bootstrap.min.js"></script>
-      <div class="jumbotron">
-        <div class="tabbable-left">  
-              <ul class="nav nav-tabs">      
-              <li class="active"><a href="#news" data-toggle="tab">Новости</a></li>
-              <li><a href="#navi" data-toggle="tab">В планах</a></li>
-              </ul>
-              <div class="tab-content">
-              <div class="tab-pane active" id="news">
-                    <h1>Тут пока что, нет не чего :(</h1>
-                    <p> Но возможно вскоре что то будет. <img src="img/favicon_in_seea.png" title="В процессе !" ></p>
-              </div>
-              <div class="tab-pane" id="navi">
-              <br>
-              <p>Форум. <span class="glyphicon glyphicon-refresh"></span></p>
-              <p>Просмотр страницы пользователя. <span class="glyphicon glyphicon-ok" style="color: green"></span></p>                              
-              <p>Личные сообшения, почта. <span class="glyphicon glyphicon-ok" style="color: green"></span></p> 
-              <p>Динамический чат. <span class="glyphicon glyphicon-ok" style="color: green"></span></p>
-              </div>
-              
-              </div>
-        </div>
- 
-      </div>
-       <?php
-       include('./Get_Post.php');
-       ?>
-       <?php
-       if(isset($_COOKIE['uid']))
-       {    
-           if($_COOKIE['uid']==1||$_COOKIE['uid']==2)
-           {
-              include('./Global_input_form.php'); 
-           }
-              
-       }
-       ?>
-     <footer > <!--Футер-->
-       <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
+      
+
+       <div id="is" class="jumbotron" style="height:920px;">
+          <div style="text-align: center">        
+                      <h2>Чат:</h2>                 
+          </div>
+           <hr>
+               
+             <div id="is" style="overflow:auto;height: 500px;">
+                   <div id="messages" style="overflow:auto;height: 500px"> 
+               
+             </div>
+                
+         </div>
+            <?php
+                include ('./Chat_form.php');
+                 ?>
+         </div>
+	
+    
+       <footer > <!--Футер-->
+      <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
        
             <p  style="text-align:center;margin-top:1%;color:#e6e6e6;"><span class="glyphicon glyphicon-fire"></span> Create by Ro(MicroSDA) <span class="glyphicon glyphicon-fire"></span></p>
        
       </nav>
      </footer>
-    <script>
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    </div><!-- /container -->
+ 
 
-   ga('create', 'UA-69005394-1', 'auto');
-   ga('send', 'pageview');
-   </script>
-    </div><!-- .content -->
-    <script src="../../as
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69005394-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+ <script>
+  //Ставим цикл на каждые три секунды
+   load_messes();
+   setInterval(load_messes,3000);
+ </script>
+       <script src="js/jquery-1.11.2.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+       
+  </body>
+</html>

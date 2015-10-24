@@ -23,42 +23,72 @@ include('./chek_coockie.php')
       <br>
       <br>
       <br>
-      <nav class="navbar navbar-inverse" role="navigation" style="font-size:15px;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+       <nav role="navigation" class="navbar navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ></a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
+            <a href="./index.php" class="navbar-brand" style="font-size:15px;color:#e6e6e6">MicroSDA Blog</a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            <li><a href="index.php" style="color:#e6e6e6;margin-top: 7%">На главную</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color:#e6e6e6;margin-top: 8%" >Контакты<span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="https://vk.com/id40372407">Vk</a></li>
-                  <li><a href="https://github.com/MicroSDA/">GitHub</a></li>              
-				  <li><a href="http://habrahabr.ru/users/microsda/">Habrahabr</a></li>
-				  <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Дополнительно</li>
-                  <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
-                </ul>
-                <?php
+       
+               
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color:#e6e6e6">Контакты<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                   <li><a href="https://vk.com/id40372407">Vk</a></li>
+                   <li><a href="https://github.com/MicroSDA/">GitHub</a></li>              
+				   <li><a href="http://habrahabr.ru/users/microsda/">Habrahabr</a></li>
+				   <li><a href="https://soundcloud.com/decompilation/song-1">SoundCloud</a></li>
+                   <li class="divider"></li>
+                   <li class="dropdown-header">Дополнительно</li>
+                   <li><a href="contact_with_admin.php">Связаться с администрацией</a></li>
+                    </ul>
+                </li>
+               <?php
                 include('./Get_online.php');
                 ?>
-              </li>
-            </ul>
-            <?php
-            include('./Login_or_unlogin_form.php');
-            ?>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+                    <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color:#e6e6e6">Навигация<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="./Chat_page.php">Чат</a></li>  
+                    </ul>
+                    </li>                
+                    </ul>  
+                    <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#e6e6e6">
+                        <b>
+                        <?php
+                     if(!isset($_COOKIE['name']))
+                       {
+                       echo('Войти');
+                       }else{echo('Привет, '.$_COOKIE['name'].'');}
+                         ?>                      
+                        </b> 
+                        <span class="caret"></span></a>
+                        <?php
+                        if(!isset($_COOKIE['name']))
+                        {
+                            include('./Login_or_unlogin_form.php');
+                        }
+                        if(isset($_COOKIE['name']))
+                        {
+                            include('./Login_or_unlogin_form.php');
+                        }
+                        ?>
+                    </ul>
+                    
+                
+            
+        </div>
+    </nav>
        <script src="js/jquery-1.11.2.js"></script>
        <script src="js/bootstrap.min.js"></script>
 	   

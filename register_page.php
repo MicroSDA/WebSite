@@ -10,11 +10,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 </head>
-<body style="background-image: url(img/brown.png);">
+<body style="background-image: url(img/background/brown.png);">
      <div class="container">
               <div class="jumbotron" style="max-width:300px;margin-left:auto;margin-right:auto;margin-top:20%;min-height:375px">
                   <h2 style="text-align: center">Регистрация:</h2>
-		      <form action ="./php_script/register.php" method="POST" class="navbar-form navbar-right" role="form">
+		      <form action ="./register.php" method="POST" class="navbar-form navbar-right" role="form">
                          <div class="form-group" style="text-align:center">
                           <input type="text" placeholder="Login" name="name" class="form-control"><br><br>
                           <input type="password" placeholder="Password" name="pass" class="form-control"><br><br>

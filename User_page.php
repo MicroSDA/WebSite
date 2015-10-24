@@ -1,6 +1,14 @@
 <?php
 include('./chek_coockie.php')
 ?>
+<?php
+session_start();
+include('./connect_db.php');
+$user_name_user_page=$_SESSION['user'];
+$user_aryy_user_page=mysqli_query($link, "SELECT * FROM ".$users_table." WHERE Name='".mysqli_real_escape_string($link,$user_name_user_page)."'");
+$userdata_user_page = mysqli_fetch_assoc($user_aryy_user_page);
+unset($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +19,7 @@ include('./chek_coockie.php')
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.png">
 
-    <title>MicroSDA Blog</title>
+    <title>Страница пользователя</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/jquery.fileupload.css">
@@ -92,57 +100,48 @@ include('./chek_coockie.php')
     </nav>
        <script src="js/jquery-1.11.2.js"></script>
        <script src="js/bootstrap.min.js"></script>
-      <div class="jumbotron">
-        <div class="tabbable-left">  
-              <ul class="nav nav-tabs">      
-              <li class="active"><a href="#news" data-toggle="tab">Новости</a></li>
-              <li><a href="#navi" data-toggle="tab">В планах</a></li>
-              </ul>
-              <div class="tab-content">
-              <div class="tab-pane active" id="news">
-                    <h1>Тут пока что, нет не чего :(</h1>
-                    <p> Но возможно вскоре что то будет. <img src="img/favicon_in_seea.png" title="В процессе !" ></p>
-              </div>
-              <div class="tab-pane" id="navi">
-              <br>
-              <p>Форум. <span class="glyphicon glyphicon-refresh"></span></p>
-              <p>Просмотр страницы пользователя. <span class="glyphicon glyphicon-ok" style="color: green"></span></p>                              
-              <p>Личные сообшения, почта. <span class="glyphicon glyphicon-ok" style="color: green"></span></p> 
-              <p>Динамический чат. <span class="glyphicon glyphicon-ok" style="color: green"></span></p>
-              </div>
-              
-              </div>
-        </div>
- 
-      </div>
-       <?php
-       include('./Get_Post.php');
-       ?>
-       <?php
-       if(isset($_COOKIE['uid']))
-       {    
-           if($_COOKIE['uid']==1||$_COOKIE['uid']==2)
+       
+     
+       <div class="jumbotron" style="min-height: 500px;text-align:center">
+           <h3>Персональные данные пользователя:</h3><hr>
+           <img  style="border-style: solid;border-width: 1px" src="img/avatars/<?php echo($userdata_user_page['img']) ?>" title="Aватар" alt="Аватар"><br>
+           <h3>Имя: <?php echo ($userdata_user_page['Name']); ?></h3>
+           <h3>Почта: <?php echo ($userdata_user_page['Email']); ?> </h3>
+           <h3>Статус: <?php
+           if($userdata_user_page['uid']==0)
            {
-              include('./Global_input_form.php'); 
+             echo('Пользователь');  
            }
-              
-       }
-       ?>
+           if($userdata_user_page['uid']==1)
+           {
+             echo('<font style="color:green">Модератор</font>');  
+           }
+           if($userdata_user_page['uid']==2)
+           {
+             echo('<font style="color:red">Администратор</font>');  
+           }
+           ?>
+           </h3>
+	</div>  
+	
      <footer > <!--Футер-->
-       <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
+      <nav class="navbar navbar-inverse" role="navigation" style="font-size:19px;">
        
             <p  style="text-align:center;margin-top:1%;color:#e6e6e6;"><span class="glyphicon glyphicon-fire"></span> Create by Ro(MicroSDA) <span class="glyphicon glyphicon-fire"></span></p>
        
       </nav>
      </footer>
-    <script>
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    </div> <!-- /container -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-   ga('create', 'UA-69005394-1', 'auto');
-   ga('send', 'pageview');
-   </script>
-    </div><!-- .content -->
-    <script src="../../as
+  ga('create', 'UA-69005394-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

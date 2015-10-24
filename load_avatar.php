@@ -9,12 +9,16 @@ if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
      include('classSimpleImage.php');
      $image = new SimpleImage();
      $image->load('img/'.$_FILES['userfile']['name'].'');
-     $image->resizeToWidth(200);
+     $image->resizeToHeight(250);
      $image->save('img/avatars/'.$_FILES['userfile']['name'].'');
      $image = new SimpleImage();
      $image->load('img/'.$_FILES['userfile']['name'].'');
-     $image->resizeToWidth(100);
+     $image->resizeToHeight(144);
      $image->save('img/avatars/mini/'.$_FILES['userfile']['name'].'');
+     $image = new SimpleImage();
+     $image->load('img/'.$_FILES['userfile']['name'].'');
+     $image->resizeToHeight(60);
+     $image->save('img/avatars/mini/mini/'.$_FILES['userfile']['name'].'');
      
      header('Location:Personal_Area_page.php');
 }else{

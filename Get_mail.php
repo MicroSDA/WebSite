@@ -1,10 +1,9 @@
 <?php
 include('./connect_db.php');//Конект к бд
-$masage_aryy=mysqli_query($link,"SELECT * FROM ".$masage_table.";"); 
+$masage_aryy=mysqli_query($link,"SELECT * FROM mail_".$_COOKIE['name']." ORDER BY id DESC;"); 
 mysqli_close($link); 
 while ($masage=mysqli_fetch_row($masage_aryy))
-{echo('
-   <div class="well">
+{echo(' <div class="well">
    <div class="row">
    <div class="col-md-2">
    <img src="img/avatars/mini/mini/'.$masage[5].'"><br>
@@ -17,3 +16,4 @@ while ($masage=mysqli_fetch_row($masage_aryy))
    </div>
    </div>');}
 ?>
+ 
